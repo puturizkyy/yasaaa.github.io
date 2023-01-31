@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+}
+nav {
+  display: flex;
+  background-color: violet;
+  padding: 20px 0;
+  color: rgb(1, 73, 25);
+  justify-content: space-around;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+nav ul li a {
+  text-decoration: none;
+}
+nav ul li a:hover {
+  color: blanchedalmond;
+}
+/*hambeger menu*/
+.menu {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+.menu input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  opacity: 0;
+  z-index: 2;
+}
+
+.menu span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: brown;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+/*hambuger menu animation*/
+.menu span:nth-child(2) {
+  transform-origin: 0 0;
+}
+menu span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+.menu input:checked ~ span:nth-child(2) {
+  background-color: red;
+  transform: rotate(45deg) translate(3.5px, -4px);
+}
+.menu input:checked ~ span:nth-child(6) {
+  background-color: red;
+  transform: rotate(-45deg) translate(6px, -5px);
+}
+.menu input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+.menu input:checked ~ span:nth-child(5) {
+  opacity: 0;
+  transform: scale(0);
+}
+.menu input:checked ~ span:nth-child(4) {
+  opacity: 0;
+  transform: scale(0);
+}
+video {
+  width: 960px;
+  height: 540px;
+}
+
+/* reponsiv*/
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+}
+/* ukuran mobil */
+@media screen and (max-width: 576px) {
+  .menu {
+    display: flex;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 40%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: violet;
+    z-index: 1;
+    transform: translateX(100%);
+    transition: 1s;
+  }
+  nav ul.slide {
+    transform: translateX(0);
+  }
+  video {
+    height: 230px;
+    width: 100%;
+  }
+  .container {
+    height: 100px;
+    background-color: aquamarine;
+  }
+  .r {
+    margin: 1px;
+  }
+
+  .video-s {
+    width: 35%;
+    height: 130px;
+    background-color: blueviolet;
+  }
+  .h2 {
+    width: 65%;
+    height: 130px;
+    float: right;
+    background-color: aqua;
+  }
+}
